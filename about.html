@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About</title>
+        <link rel="stylesheet" href="css\about_styles.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="smooth-scroll-wrapper">
+            <div class="content">
+                <div class="container">
+                    <h1 class="text">Namaste, we welcome you to</h1>
+                    <div class="img">
+                        <img src="images\TimbreBells.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                        “I believe in the eternal power of music. It's everywhere, even though it's a soft power but it carries the strength of surpassing all limits! There was no platform aiming to connect people and their cultures. We have infinite cultures and they all are unique. TimbreBells wants to tie them together with a string called ‘Music’”, says the founder Prerna Burande on creating this melody project of her dreams.
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">TimbreBells is a music startup aiming to connect people through music and rhythms under its various events and campaigns.</h1>
+                    <div class="img">
+                        <img src="img-two.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                         It starts with the chirping of birds in the morning, continues to the busy traffic, and ends with the crickets and slow rustling of the trees at night. We at TimbreBells aim to bring together people with all kinds of taste in music and cultures and rise together as one big rhythmic family or as one of our pillars says ‘Vasudhaiva Kutumbakam’.
+                    </p>
+                </div>
+
+                <div class="container">
+                    <h1 class="text">Music rules our ears</h1>
+                    <div class="img">
+                        <img src="img-three.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                      We celebrate music and melodies by giving a platform to anyone and everyone interested in making the world vibe with any genre or language of their choice. You are welcomed and we are lucky to have you here! We have no limits regarding age, race, country, or even experience. TimbreBells strongly believes in ‘लोकाःसमस्ताःसुखिनोभवन्तु’, we aim at promoting our major ambition of “World Happiness” through music.
+
+                    </p>
+                </div>
+                <!-- <div class="container">
+                    <h1 class="text">Groove recruit 19</h1>
+                    <div class="img">
+                        <img src="img-four.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rem labore
+                        fuga dolorum ea obcaecati est, voluptates ipsum tempore voluptate.
+                    </p>
+                </div> -->
+            </div>
+        </div>
+        <script>
+            const body = document.body,
+                scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+                height = scrollWrap.getBoundingClientRect().height - 1,
+                speed = 0.04;
+
+            var offset = 0;
+
+            body.style.height = Math.floor(height) + "px";
+
+            function smoothScroll() {
+                offset += (window.pageYOffset - offset) * speed;
+
+                var scroll = "translateY(-" + offset + "px) translateZ(0)";
+                scrollWrap.style.transform = scroll;
+
+                callScroll = requestAnimationFrame(smoothScroll);
+            }
+
+            smoothScroll();
+
+            $(function () {
+                var elements = $(".text, .img").toArray();
+                $(window).scroll(function () {
+                    elements.forEach(function (item) {
+                        if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                            $(item).addClass("reveal");
+                        }
+                    });
+                });
+                elements.forEach(function (item) {
+                    if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                        $(item).addClass("reveal");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
